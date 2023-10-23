@@ -1,0 +1,64 @@
+#merge short algo 
+
+merge short is the shorting technique based on divide and concquer
+In which we divide a larger problen into many smaller problems which are then solved resulting in many solved problems which are then combined to hive the solution of the larger problem
+
+#######---algo-----------------------------------##
+//algo of merge short can be divided into three parts 
+1-> divide -> means partitioning the n-element array to be sorted into two sub-arrays of n/2 elements
+2-> Conquer means sorting the two sub-arrays recursively using merge sort.
+3-> Combine means merging the two sorted sub-arrays of size n/2 to produce the sorted array of n
+    elements.
+
+#########################################################
+
+merge (arr, beg, mid, end)
+{
+	step1: set i=beg, j=mid+1, index=0, temp[n]={0}
+
+
+	step2: repeat while (i<=mid) and (j<=end)
+		if arr[i]<arr[j]
+			set temp[index]=arr[i]
+			i<- i+1
+		else
+			set temp[index] = arr[j]
+			J<- J+1
+		END OF IF
+		set index <- index + 1
+		END OF WHILE LOOP
+
+
+	STEP 3:repeat while (i<=mid)
+		set temp[index]=arr[i]
+		i<- i+1
+		index <- index + 1
+		END OF WHILE LOOP
+	
+	STEP 4:repeat while (j<=end)
+		set temp[index]=arr[J
+		J<- J+1
+		index <- index + 1
+		END OF WHILE LOOP
+
+	step 5: copy temp element back to arr
+		for k= beg;k<=end;k++
+			arr[k] <- temp[k]
+		end of for loop
+
+	step 6: end
+			
+}
+
+
+
+merge_sort(arr, beg, end)
+{	step 1: If beg<end:
+		set mid = (beg+end)/2
+		call merge_sort (arr, beg, mid)
+		call merge_sort(arr, mid+1, end)
+		merge (arr, beg, mid, end)
+		end of if
+	step 2: END
+}
+
