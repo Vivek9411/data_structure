@@ -12,6 +12,7 @@ In which we divide a larger problen into many smaller problems which are then so
 
 #########################################################
 
+
 merge (arr, beg, mid, end)
 {
 	step1: set i=beg, j=mid+1, index=0, temp[n]={0}
@@ -61,4 +62,15 @@ merge_sort(arr, beg, end)
 		end of if
 	step 2: END
 }
+
+
+
+time compelexity
+time colpexity of merge sort funuction = O(log(n))
+time complextiy of merge = O(nlog(n))
+its always this in best case or worst case
+
+
+space complexity 
+It is an outplacing algorithm itt requires extra space for merge o(n)
 
