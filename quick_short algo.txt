@@ -78,7 +78,7 @@ best case -> T(n) = 2*T(n/2) + f(n)
 worst case -> T(n) = T(n-1) + T(1) + f(n)
 		T(n) = O(n^2) by substitution method 
 
-
+**note quick sort also fails when all the elements of array are same
 ###########################################################################################################################
 
 randomised quick sort
