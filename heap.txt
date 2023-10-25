@@ -1,0 +1,69 @@
+A binary heap is a complete binary tree in which every node satisfies the heap property which 
+states that:	If B is a child of A, then key(A) ≥ key(B) 
+
+
+ Min-Heap:  In a Min-Heap the key present at the root node must be minimum among the keys present at all of it’s children.
+	  The same property must be recursively true for all sub-trees in that Binary Tree.
+
+Max-Heap: In a Max-Heap the key present at the root node must be greatest among the keys present at all of it’s children.
+	 The same property must be recursively true for all sub-trees in that Binary Tree.
+
+
+properties of heap using array:
+-> Since a heap is defined as a complete binary tree, all its elements can be stored sequentially in an array.
+->  It follows the same rules as that of a complete binary tree. That is, 
+	if an  element is at position i in the array, then its left child is stored at position 2i and its right child at position 2i+1.
+	Conversely, an element at position i has its parent stored at position i/2.
+		**note ->  i start from 1
+
+uses->
+--> Being a complete binary tree, all the levels of the tree except the last level are completely filled.
+-->The height of a binary tree is given as log2n, where n is the number of elements.
+-->Heaps (also known as partially ordered trees) are a very popular data structure for implementing  priority queues.
+
+
+
+Operations ->
+instertion 
+deletion
+1-> insertion 
+	Step 1: [Add the new value and set its POS]
+		SETN=N+1, POS=N
+	Step 2: SET HEAP[N] = VAL
+	Step 3: [Find appropriate location of VAL]
+		Repeat Steps 4 and 5 while POS>1
+	Step 4: SET PAR = POS/2
+	Step 5: IF HEAP[POS] <= HEAP[PAR],
+		then Goto Step 6.
+	      ELSE
+		SWAP HEAP[POS], HEAP[PAR]
+		POS = PAR
+	      [END OF IF]
+	[END OF LOOP]
+	Step 6: RETURN
+2-> deletion 
+Step 1: [Remove the last node from the heap]
+	SET LAST = HEAP[N], SETN=N-1
+Step 2: [Initialization]
+	SET PTR=1, LEFT=2, RIGHT=3
+Step 3: SET HEAP[PTR] = LAST
+Step 4: Repeat Steps 5 to 7 while LEFT <= N
+Step 5: IF HEAP[PTR] >= HEAP[LEFT] AND
+	HEAP[PTR] >= HEAP[RIGHT]
+	Go to Step 8
+	[END OF IF]
+Step 6: IF HEAP[RIGHT] <= HEAP[LEFT]
+	SWAP HEAP[PTR], HEAP[LEFT]
+	SET PTR = LEFT
+	ELSE
+	SWAP HEAP[PTR], HEAP[RIGHT]
+	SET PTR = RIGHT
+	[END OF IF]
+Step 7: SET LEFT=2* PTR and RIGHT = LEFT+1
+	[END OF LOOP]
+Step 8: RETURN
+
+
+appliacations ->
+1. sorting an array using heap 
+2. priority queue
