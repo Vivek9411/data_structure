@@ -8,3 +8,4 @@ reference - data structure using c reema tharareja
 
 day1- mergesort
 day2- quicksort
+day3- heapsort
