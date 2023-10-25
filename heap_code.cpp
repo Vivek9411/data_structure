@@ -1,4 +1,5 @@
-// min heap
+// max heap
+// may contain sum bugs
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -18,7 +19,7 @@ main ()
       cout << "main menu" << endl;
       cout << "1. inserting an new element" << endl;
       cout << "2. deletion a element" << endl;
-      cout << "3. sorting the array" << endl;
+      cout << "3. print current " << endl;
       cin >> option;
       switch (option)
 	{
