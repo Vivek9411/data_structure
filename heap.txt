@@ -67,3 +67,9 @@ Step 8: RETURN
 appliacations ->
 1. sorting an array using heap 
 2. priority queue
+
+
+# sorting 
+heap sort takes the O(nlogn) time both in best case and worst case
+as logn time is taken insertion and deletion 
+ans we have to delete n elements so time complextiy becomes (nlogn)
