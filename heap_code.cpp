@@ -1,6 +1,10 @@
 // max heap
 // may contain sum bugs
-#include <bits/stdc++.h>
+// heap sort added 
+
+// max heap
+// may contain sum bugs
+#include<bits/stdc++.h>
 using namespace std;
 
 void insertion (vector < int >&v, int &n);
@@ -20,32 +24,66 @@ main ()
       cout << "1. inserting an new element" << endl;
       cout << "2. deletion a element" << endl;
       cout << "3. print current " << endl;
+      cout << "4. sort all the current elements"<< endl; //decending order just delete all the elemets one by one and save them
       cin >> option;
       switch (option)
 	{
 	case 1:
+	{
 	  cout << "enter the number you want to insert" << endl;
 	  int n;
 	  cin >> n;
 	  insertion (v, n);
+	}
 	  break;
 	case 2:
+	{
 	  int d;
+	  if(v.size()<2)
+	  {
+	      cout<<"heap is empty"<<endl;
+	      break;
+	  }
 	  d = deletion (v);
 	  cout << "number deleted from heap is" << d << endl;
+	}
 	  break;
 	case 3:
+	{
 	  for(auto &it: v)
 	  {
 	      cout<<it<<" ";
 	  }
 	  cout<<endl;
+	}
 	  break;
+	 case 4:
+	 {
+	    vector<int> temp;
+	    int del =0;
+	    int k = v.size();
+	    for(int i =1; i<k; i++)
+	    {
+	        del= deletion(v);
+	        temp.push_back(del);
+	    }
+	    cout<<"sorted array is"<<endl;
+	    for(int i =0;i<temp.size();i++)
+	        {
+	            v.push_back(temp[i]);
+	            cout<<temp[i]<<" ";
+	        }
+	        cout<<endl;
+	        temp.clear();
+	 }
+	   break;
 	default:
+	{
 	  cout << "invalid input" << endl;
 	}
-    }
-  while (option != 4);
+	  break;
+	}
+    }while (option != 5);
   return 0;
 }
 
@@ -78,11 +116,6 @@ int
 deletion (vector < int >&v)
 {
   // always top element is deleted form the array
-  if (v.size () < 2)
-    {
-      cout << "heap is empty" << endl;
-      return -1;
-    }
   int i = v.size () - 1;
   int deleted_element = v[1];
   v[1] = v[i]; 
